@@ -1,0 +1,122 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: #377cbd;
+}
+
+/*i am a dumba-- i mixed user-select with pointer-events oh well*/
+#defaultCanvas0 {
+    position: fixed;
+    z-index: 5;
+    user-select: none;
+}
+
+.on-screen {
+    top: 0;
+    left: 0;
+}
+
+.off-screen {
+    top: -100%;
+    left: -100%;
+}
+
+#transition-container {
+    position: fixed;
+    user-select: none;
+    -webkit-user-select: none;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+#arrows {
+    position:fixed;
+    top: 40%;
+    width: 100%;
+}
+
+#left-arrow {
+    border: 2px solid gray;
+    width: 40px;
+    height: 40px;
+    left: 3%;
+    position: fixed;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    background-color: grey;
+    user-select: all;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+#right-arrow {
+    color: white;
+    user-select: all;
+    border: 2px solid gray;
+    width: 40px;
+    height: 40px;
+    left: 93%;
+    position: fixed;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+#left-arrow:hover {
+    transform: scale(1.2);
+}
+
+#right-arrow:hover {
+    transform: scale(1.2);
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#content > div {
+    border: 2px solid black;
+    border-radius: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 55%;
+    cursor: pointer;
+    background-color: #51a7cf;
+}
+
+#content > div {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    position: fixed;
+}
+
+.active-slide {
+    opacity: 1;
+}
+
+.disabled-slide {
+    opacity: 0;
+}
+
+.no-clicks {
+    pointer-events: none;
+}

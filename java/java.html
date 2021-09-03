@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jaiden's portfolio - java</title>
+        <link rel="stylesheet" href="/java/java.css">
+    </head>
+    <body>
+        <div id="overlay">
+            <div id="downbar">
+            </div>
+            <div id="sidebar">
+                <div>
+                    Project
+                    <svg class="folder-icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+                    </svg>
+                </div>
+            </div>
+            <div id="selected-dir" style="width: 20%;">
+
+            </div>
+        </div>
+        <div id="content">
+            <div class="side-content">
+                <div class="dir-title">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
+                    </svg>
+                    <p>Project</p>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M7,10L12,15L17,10H7Z" />
+                    </svg>
+                </div>
+                
+                <div class="directory" style="margin-top: 10%" onclick="onClickDir('parent-folder')" id="parent-folder">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M9.3 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4H10L12 6H20C21.1 6 22 6.9 22 8V14.6C20.6 13.6 18.9 13 17 13C13.5 13 10.4 15.1 9.1 18.3L8.8 19L9.1 19.7C9.2 19.8 9.2 19.9 9.3 20M23 19C22.1 21.3 19.7 23 17 23S11.9 21.3 11 19C11.9 16.7 14.3 15 17 15S22.1 16.7 23 19M19.5 19C19.5 17.6 18.4 16.5 17 16.5S14.5 17.6 14.5 19 15.6 21.5 17 21.5 19.5 20.4 19.5 19M17 18C16.4 18 16 18.4 16 19S16.4 20 17 20 18 19.6 18 19 17.6 18 17 18" />
+                    </svg>
+                    <p><b>java_projects</b></p><p style="color: rgb(94, 95, 96);margin-left: 5px;">~/portfolio/java_projects</p>
+                </div>
+
+                <!--Inside Folder Stuff-->
+                <div class="directory" style="margin-left: 13.5%;" onclick="onClickDir('dot-idea')" id="dot-idea">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+                    </svg>
+                    <p>.idea</p>
+                </div>
+
+                <div class="directory" style="margin-left: 13.5%;" onclick="onClickDir('src-folder')" id="src-folder">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px;color:rgb(63,134,160)" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+                    </svg>
+                    <p>src</p>
+                </div>
+
+                <div class="directory" style="margin-left: 26.5%;" onclick="onClickDir('home')" id="home">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z" />
+                    </svg>
+                    <p>home.txt</p>
+                </div>
+
+
+                <!--Bottom Stuff-->
+                <div class="directory" onclick="onClickDir('libraries')" id="libraries">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px;color:rgb(98,181,67);" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M22,21H2V3H4V19H6V17H10V19H12V16H16V19H18V17H22V21M18,14H22V16H18V14M12,6H16V9H12V6M16,15H12V10H16V15M6,10H10V12H6V10M10,16H6V13H10V16Z" />
+                    </svg>
+                    <p>External Libraries</p>
+                </div>
+                <div class="directory" onclick="onClickDir('console-scratch')" id="console-scratch">
+                    <svg style="width:24px;height:24px;margin-left: 8%;color:rgb(64,182,224);" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3,4C1.89,4 1,4.89 1,6V18A2,2 0 0,0 3,20H10.26C11.57,21.88 13.71,23 16,23A7,7 0 0,0 23,16C23,14.17 22.28,12.42 21,11.11V8C21,6.89 20.1,6 19,6H11L9,4H3M16,11A5,5 0 0,1 21,16A5,5 0 0,1 16,21A5,5 0 0,1 11,16A5,5 0 0,1 16,11M15,12V17L18.61,19.16L19.36,17.94L16.5,16.25V12H15Z" />
+                    </svg>
+                    <p>Scratches and Consoles</p>
+                </div>
+            </div>
+            <div class="editor-window">
+                <div id="open-files">
+                    
+                </div>
+                <div id="tools">
+
+                </div>
+                <div id="editor-content">
+                    <h1 id="editor-title"></h1>
+                    <p id="editor-desc"></p>
+                </div>
+            </div>
+        </div>
+        <script src="/java/java.js"></script>
+    </body>
+</html>

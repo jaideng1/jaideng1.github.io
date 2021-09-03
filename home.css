@@ -1,0 +1,177 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#intro-container {
+    position: fixed;
+    width: 512px;
+    height: 384px;
+    top: 50%;
+    left: 50%;
+    margin-top: -256px;
+    margin-left: -230px;
+}
+
+#image-intro {
+    display: fixed;
+    position: relative;
+}
+
+#image-intro img {
+    position: absolute;
+}
+
+#pfp-jaideng1 {
+    cursor: pointer;
+}
+
+#pfp-empty {
+    cursor: pointer;
+}
+
+#content {
+    margin-top: 10000px;
+    margin-left: 22%;
+    margin-right: 22%;
+    margin-bottom: 500px;
+}
+
+#menu-content {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+#menu-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+
+    color: black;
+}
+
+#menu-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    left: 100%;
+    top: 35%;
+}
+
+#menu-button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+
+    background-color: black;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    left: 90%;
+    top: 25%;
+
+    user-select: none;
+}
+
+
+.small-menu {
+    transition-duration: 1s;
+    transform: scale(1);
+}
+
+.large-menu {
+    transform: scale(50);
+    transition-duration: 1s;
+}
+
+.ignore-clicks {
+    pointer-events: none;
+}
+
+.hidden {
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+
+.shown {
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+
+.menu-buttons {
+    font-family: 'Source Sans Pro', sans-serif;
+    position: absolute;
+    z-index: 5;
+    left: 20%;
+    font-size: 200%;
+    top: 10%;
+
+    letter-spacing: 10px;
+
+    transition-duration: 0.2s;
+}
+
+.menu-buttons h1 {
+    cursor: pointer;
+    transform: scale(1);
+    height: 64px;
+    transition-duration: 0.2s;
+}
+
+.menu-buttons > h1:hover {
+    transform: scale(1.08);
+    transition-duration: 0.2s;
+}
+
+#socials {
+    position: absolute;
+    z-index: 5;
+
+    left: 2%;
+    top: 70%;
+
+    display: inline-block;
+}
+
+#socials > div {
+    cursor: pointer;
+    
+    margin: 10px 10px 10px 10px;
+
+    width: 52px;
+    height: 52px;
+    
+    border-radius: 50%;
+
+    background-color: gray;
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    transform: scale(1);
+    transition-duration: 0.1s;
+}
+
+#socials > div:hover {
+    transform: scale(1.12);
+    transition-duration: 0.1s;
+}

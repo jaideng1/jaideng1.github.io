@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Meta Options-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <!--Scripts-->
+        <!--Stylesheets-->
+        <link href="home.css" rel="stylesheet">
+        <!--Preconnect for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+        <!--Title-->
+        <title>jaiden's portfolio - home page</title>
+    </head>
+    <body style="background-color: #000000;">
+        <!--<div id="menu-container" class="ignore-clicks" style="opacity: 0;">
+            <canvas id="menu-canvas" width="100%" height="100%" style="width: 100%; height: 100%;"></canvas>
+        </div>-->
+        <div id="intro-container">
+            <div id="image-intro">
+                <!--1024 x 768 pixels-->
+                <div id="normal-pfp">
+                    <img src="assets/pfp-no-screen.png" width="512" height="384" id="pfp-empty" onclick="enableMenu()">
+                    <img src="assets/jaideng1.png" width="512" height="384" id="pfp-jaideng1" onclick="toTopAndGoToGit()">
+                </div>
+
+                <img src="assets/pfp-whole.png" width="512" height="384" id="pfp-whole">
+            </div>
+        </div>
+
+        <div id="menu-container" class="ignore-clicks">
+            <div id="menu-circle"></div>
+            <div id="menu-content" class="hidden">
+                <div id="menu-button" onclick="disableMenu()">X</div>
+                <div class="menu-buttons">
+                    <h1 onclick="to('javascript')">JAVASCRIPT</h1>
+                    <h1 onclick="to('python')">PYTHON</h1>
+                    <h1 onclick="to('java')">JAVA</h1>
+                    <h1 onclick="to('c-sharp')">C#</h1>
+                </div>
+                <div id="socials" style="width: 300px;"></div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div>
+                <h1>Hi! I'm Jaiden.</h1>
+                <p>I'm a developer mainly working with JS (NodeJS, React), C# (with Unity), Python, and Java.</p>
+            </div>
+            <div>
+                <h2>Some of my projects:</h2>
+                <div>
+                    <h3>Bazaar Stocks</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum molestiae cum tempora repudiandae dolor, doloremque vitae nam obcaecati vero deserunt sit fuga labore aperiam modi incidunt assumenda suscipit dolores voluptates.</p>
+                </div>
+                <div>
+                    <h3>asdgs</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum molestiae cum tempora repudiandae dolor, doloremque vitae nam obcaecati vero deserunt sit fuga labore aperiam modi incidunt assumenda suscipit dolores voluptates.</p>
+                </div>
+            </div>
+        </div>
+        <script src="socials.js"></script>
+        <script src="home.js"></script>
+        <script>
+            function to(location) {
+                document.location.href = "/" + location + "/" + location + ".html"
+
+                // if (isLocal()) {
+                // } else document.location.href = "/" + location + "/" + location + ".html";
+            }
+        </script>
+    </body>
+</html>
