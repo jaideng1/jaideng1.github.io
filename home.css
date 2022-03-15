@@ -278,3 +278,13 @@ body {
 #circle-where a:active {
     color: #26b4d8;
 }
+
+#scroll {
+    position: fixed;
+    top: 10px;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%);
+}

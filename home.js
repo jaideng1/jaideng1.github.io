@@ -40,6 +40,12 @@ let lastScroll = window.scrollY;
 function onScroll() {
     scrl = window.scrollY;
 
+    if (scrl < 1000) {
+        document.getElementById("scroll").style.opacity = 1 - scrl / 1000;
+    } else {
+        document.getElementById("scroll").style.opacity = 0;
+    }
+
     if (scrl > 9300 && scrl < 9500) {
         document.getElementById("canvas-bg").style.opacity = (scrl - 9300) / 200;
     } else if (scrl <= 9300) {
