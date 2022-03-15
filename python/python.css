@@ -1,11 +1,10 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: black;
-    background-color: #377cbd;
+    color: #17252A;
+    background-color: #3AAFA9;
 }
 
-/*i am a dumba-- i mixed user-select with pointer-events oh well*/
 #defaultCanvas0 {
     position: fixed;
     z-index: 5;
@@ -38,7 +37,7 @@ body {
 }
 
 #left-arrow {
-    border: 2px solid gray;
+    border: 2px solid #17252A;
     width: 40px;
     height: 40px;
     left: 3%;
@@ -46,7 +45,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     transition-duration: 0.1s;
-    background-color: grey;
+    background-color: #17252A;
     user-select: all;
     color: white;
     display: flex;
@@ -60,7 +59,7 @@ body {
 #right-arrow {
     color: white;
     user-select: all;
-    border: 2px solid gray;
+    border: 2px solid #17252A;
     width: 40px;
     height: 40px;
     left: 93%;
@@ -68,7 +67,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     transition-duration: 0.1s;
-    background-color: grey;
+    background-color: #17252A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,13 +92,13 @@ body {
 }
 
 #content > div {
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 7px;
     padding-left: 20px;
     padding-right: 20px;
     width: 55%;
     cursor: pointer;
-    background-color: #51a7cf;
+    background-color: #DEF2F1;
 }
 
 #content > div {
@@ -119,4 +118,90 @@ body {
 
 .no-clicks {
     pointer-events: none;
+}
+
+#home-container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+#home-container svg {
+    color: #FEFFFF;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+
+    border: 2px double #DEF2F1;
+    border-radius: 10px;
+    transition-duration: 0.1s;
+}
+
+#home-container svg:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+#bubbles {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.circle-bubble {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #2B7A78;
+    position: fixed;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.bubble-box {
+    position: fixed;
+    height: 100%;
+    left: 10%;
+    width: 100%;
+    top: 0;
+    background-color: #2B7A78;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    border-radius: 50px;
+}
+
+.bubble-box > div {
+    height: 100%;
+    position: fixed; 
+    overflow: hidden;
+    width: 50%;
+}
+
+.bubble-box > div > svg {
+    color: #2B7A78;
+}
+
+.deselected {
+    user-select: none;
+    pointer-events: none;
+}
+
+
+.wave {
+    transition-duration: 2s;
+}
+
+
+.clickable-slide {
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.clickable-slide:hover {
+    transform: scale(1.04);
 }

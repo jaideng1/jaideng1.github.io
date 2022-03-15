@@ -15,11 +15,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
         <!--Title-->
         <title>jaiden's portfolio - home page</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     </head>
     <body style="background-color: #000000;">
         <!--<div id="menu-container" class="ignore-clicks" style="opacity: 0;">
             <canvas id="menu-canvas" width="100%" height="100%" style="width: 100%; height: 100%;"></canvas>
         </div>-->
+
+        <div id="scroll" style="text-align: center;padding-left: 50px">
+            Hey, you can scroll down! That's just my profile picture! <br>The website has already loaded.
+        </div>
+
         <div id="intro-container">
             <div id="image-intro">
                 <!--1024 x 768 pixels-->
@@ -29,6 +35,20 @@
                 </div>
 
                 <img src="assets/pfp-whole.png" width="512" height="384" id="pfp-whole">
+            </div>
+        </div>
+
+        <div id="down-container">
+            <div id="down-button" onclick="switchScroll()">
+                <svg id="scroll-svg" style="width:64px;height:64px;" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" />
+                </svg>
+            </div>
+        </div>
+
+        <div id="popups">
+            <div id="circle-where" style="opacity: 0">
+                <p>Play with this <a href="https://jaideng1.github.io/3d-circles/" target="_blank">here!</a></p>
             </div>
         </div>
 
@@ -47,24 +67,37 @@
         </div>
 
         <div id="content">
-            <div>
+            <div style="margin-bottom: 100px;">
                 <h1>Hi! I'm Jaiden.</h1>
-                <p>I'm a developer mainly working with JS (NodeJS, React), C# (with Unity), Python, and Java.</p>
+                <p>I'm a high school student mainly working with JS (NodeJS, React, p5.js), C# (with Unity), Python, and Java.</p>
             </div>
-            <div>
-                <h2>Some of my projects:</h2>
-                <div>
-                    <h3>Bazaar Stocks</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum molestiae cum tempora repudiandae dolor, doloremque vitae nam obcaecati vero deserunt sit fuga labore aperiam modi incidunt assumenda suscipit dolores voluptates.</p>
-                </div>
-                <div>
-                    <h3>asdgs</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum molestiae cum tempora repudiandae dolor, doloremque vitae nam obcaecati vero deserunt sit fuga labore aperiam modi incidunt assumenda suscipit dolores voluptates.</p>
+            <div style="background-color: white; color: black; padding: 20px 20px 20px 20px; margin-bottom: 200px;" id="break-it-before">
+                <h1>I like to make a few things.</h1>
+            </div>
+            <div id="break-it" style="margin-bottom: 500px; z-index: 0;">
+                <h1>I also like to break<br/> a few things.</h1>
+            </div>
+            <div id="after-break" style="position: fixed; width: 20%;">
+                <p>
+                    I've been coding for a while now, and this website is a collection of all of my projects. 
+                    <br/><br/>Click on the menu on the right side in order to see my public projects. If you want to go to my GitHub, click on the left side button.<br/><br/>
+                    <br/>
+                 </p>
+            </div>
+        </div>
+        <div id="after-content" style="color: white; transition-duration: 0.5s;">
+            <div id="socials-content" style="position: fixed; text-align: center; left: 50%; transform: translate(-50%, 0%); z-index: 0;">
+                <div style="text-align: center;">
+                    <h1>Site is still being worked on!</h1>
+                    <img src="https://avatars.githubusercontent.com/u/25446053?v=4" width="200px" height="200px" style="height: 200px; width: 200px; border-radius: 50%;">
+                    <h1>Made by jaideng1</h1>
                 </div>
             </div>
         </div>
+        <div id="cbgc"></div>
         <script src="socials.js"></script>
         <script src="home.js"></script>
+        <script src="home-bg.js"></script>
         <script>
             function to(location) {
                 document.location.href = "/" + location + "/" + location + ".html"

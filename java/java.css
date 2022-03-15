@@ -15,6 +15,15 @@ body {
     top: 10%;
 }
 
+#editor-desc {
+    padding-right: 50px;
+    font-size: 20px;
+}
+
+#editor-desc > a {
+    color: rgb(78, 155, 255);
+}
+
 .editor-window {
     background-color: rgb(40, 40, 40);
     width: 75%;
@@ -86,25 +95,33 @@ body {
 
 .dir-title {
     background-color: rgb(59, 71, 84);
-    position: absolute;
     top: 0%;
     font-size: 13px;
     color: rgb(187, 187, 187);
     margin-left: 1.5%;
     border-bottom: solid 1px rgb(50, 50, 50);
-    width: 23.5%;
+    width: 100%;
     min-width: 337px;
     display: flex;
 }
 
 .dir-title > svg {
-    margin-left: 1.5%;
+    margin-left: 10px;
+    margin-top: 1.5%;
+}
+
+.dir-title > svg:first-child {
+    margin-left: 20px;
     margin-top: 1.5%;
 }
 
 .dir-title > p {
     margin-left: 1%;
     margin-top: 2.5%;
+}
+
+#parent-folder {
+    margin-top: -8%;
 }
 
 .directory {
@@ -151,8 +168,8 @@ body {
 }
 
 #open-files {
-    width: 100%;
-    height: 5%;
+    width: 75%;
+    height: 30px;
     background-color: rgb(61, 63, 65);
     border-bottom: solid 1px rgb(50, 50, 50);
     border-left: solid 1px rgb(50, 50, 50);
@@ -162,13 +179,14 @@ body {
 }
 
 #tools {
-    width: 75%;
-    height: 5%;
+    width: 100%;
+    height: 25px;
     background-color: rgb(61, 63, 65);
-    top: 5.1%;
-    left: 25%;
+    margin-top: 30px;
+    /* top: 5.1%;
+    left: 25%; */
     border-left: solid 1px rgb(50, 50, 50);
-    position: absolute;
+    /**position: absolute;*/
 }
 
 .open-file {
@@ -231,4 +249,24 @@ body {
 .open-file > div:hover {
     background-color: rgb(89, 96, 100);
     color: rgb(52, 54, 56);
+}
+
+#page-title {
+    position: fixed;
+    left: 25px;
+    top: -5px;
+}
+
+#page-title span {
+    position: fixed;
+    left: 25%;
+    top: 11px;
+}
+
+#page-title a {
+    top: 15px;
+    left: 20px;
+    color: rgb(169, 179, 212);
+    pointer-events: all;
+    position: fixed;
 }

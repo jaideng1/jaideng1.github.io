@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Meta Options-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <!--Scripts-->
+        <!--Stylesheets-->
+        <link href="c-sharp.css" rel="stylesheet">
+        <!--Preconnect for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+        <!--Title-->
+        <title>jaiden's portfolio - home page</title>
+    </head>
+    <body>
+        <div id="back">
+            <div id="home">
+                <a href="/">Home</a>
+            </div>
+        </div>
+        <div id="load-letters">
+            <h1 id="load-cs">
+                <span id="load-c" class="before-load-c" style="left: -200px; opacity:0;">C</span><span id="load-s" class="before-load-s" style="top: -200px; opacity:0;">#</span>
+            </h1>
+        </div>
+        <div class="content-container">
+            <div class="header">
+                <h1>C#</h1>
+            </div>
+            <div class="description">
+                <p>C# is a language that I've been using for a while. I haven't done many C# projects outside of <a target="_blank" href="https://unity.com">Unity</a> though.</p>
+                <h3>This page is still being worked on! I don't really have any ideas for it though, so it might be a while.</h3>
+            </div>
+            <div id="projects">
+                <h1>Projects:</h1>
+                <!--<canvas id="canvas"></canvas>-->
+            </div>
+        </div>
+        <script>
+            function to(location) {
+                document.location.href = "/" + location + "/" + location + ".html"
+
+                // if (isLocal()) {
+                // } else document.location.href = "/" + location + "/" + location + ".html";
+            }
+        </script>
+        <script src="c-sharp.js"></script>
+    </body>
+</html>

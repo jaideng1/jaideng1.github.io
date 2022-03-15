@@ -1,0 +1,86 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffc4c4;
+}
+
+#load-letters {
+    user-select: none;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    color: white;
+    font-size: 75px;
+    transition-duration: 0.8s;
+    background-color: black;
+
+    z-index: 5;
+}
+
+#load-cs {
+    position: fixed;
+    top: 20%;
+    left: 42%;
+}
+
+#load-cs > span {
+    position: relative;
+    transition-duration: 1s;
+    /* transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    transition-timing-function: ease-out;
+}
+
+.content-container {
+    margin-left: 25%;
+    margin-right: 25%;    
+}
+
+.description {
+    margin-bottom: 60px;
+}
+
+#project-container  {
+    margin-top: 10px;
+}
+
+#project-container > div {
+    margin-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+#projects > div {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+
+    transition-duration: 0.1s;
+}
+
+#projects > div:hover {
+    transform: scale(1.02);
+}
+
+
+#back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+#home {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+}

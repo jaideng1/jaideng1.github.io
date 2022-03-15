@@ -18,7 +18,15 @@
         <title>jaiden's portfolio - python</title>
     </head>
     <body>
-        <div id="transition-container">
+        <div id="home-container">
+            <a href="/"><svg style="width:48px;height:48px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+            </svg></a>
+        </div>
+        <div id="transition-container" class="deselected">
+        </div>
+        <div id="bubbles" class="deselected">
+            
         </div>
         <div id="arrows">
             <div id="left-arrow" onclick="changeSlide(false)" class="disabled-slide">←</div>
@@ -30,11 +38,13 @@
                     Python
                 </h1>
                 <p>
-                    Python is a language that I learned not too long ago, and want to improve in.
-                    I haven't created many (public) projects with it, but I want to do and learn more.
+                    Python is a language that I haven't done too many projects in, but many of my projects in other languages are usually evolved from Python. I'm slowly doing more and more Python, and I'm still learning a lot about it.<br/>
+                    <br/>
+                    <i>(Sorry for the transition on this page... not the best lol)</i>
                 </p>
             </div>
         </div>
-        <script src="/python/python.js"></script>
+        <script src="/python/bare-python.js"></script>
+        <script src="/python/bubble-transition.js"></script>
     </body>
 </html>

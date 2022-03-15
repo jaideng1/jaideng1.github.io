@@ -71,10 +71,11 @@ function adjustZIndexes() {
 
 let content = [
     {
-        txt: "Java is a language that I use for mainly making Minecraft Plugins. I'm doing ur mom",
+        txt: "Java is a language that I started out with Minecraft. From plugins to mods, I made a lot of different programs centered around Minecraft. Right now, I'm doing less Minecraft, but I'm doing a lot of Java for the First Robotics Competition.",
         name: 'Java',
         id: 'home',
-        repo: null
+        repo: { html_url: "https://github.com/jaideng1?tab=repositories&q=&type=&language=java&sort=" },
+        custTitle: "View All Java Repos Here"
     }
 ]
 
@@ -83,6 +84,11 @@ function loadContent(id) {
         if (c.id == id) {
             editorTitle.textContent = c.name;
             editorDesc.textContent = c.txt;
+
+            if (c.repo != null) {
+                if (Object.keys(c.repo).includes("updated_at")) editorDesc.innerHTML += `<br/><br/>Last Updated: ${new Date(c.repo.updated_at).toDateString().replace(" ", ", ")}`;
+                editorDesc.innerHTML += `<br/><br/><a href="${c.repo.html_url}" target="_blank">${Object.keys(c).includes("custTitle") ? c.custTitle : "View the Repo Here"}</a>`;
+            }
 
             return;
         }
@@ -175,7 +181,7 @@ function closeTab(id) {
 
     if (openTabs.length == 0) {
         editorTitle.textContent = "";
-        editorDesc.innerHTML = "<i>Double click on a file to open it.</i>";
+        editorDesc.innerHTML = "<i>Click on a file to open it.</i>";
 
         currentlyOpenTab = "";
 
@@ -199,6 +205,21 @@ function closeTab(id) {
 }
 
 const JAVA_URL = "https://api.github.com/users/jaideng1/repos";
+
+//IDK what this function is for....
+function getRepos() {
+    fetch(JAVA_URL)
+        .then(response => response.json())
+        .then(data => {
+            for (let repo of data) {
+                let div = document.createElement("div"),
+                    p = document.createElement("p");
+                
+                
+            }
+        })
+}
+
 let repos = [];
 
 async function loadProjects() {
@@ -208,7 +229,7 @@ async function loadProjects() {
     if (data["message"] != null) {
         alert("There was an error while getting the api.")
         document.getElementsByTagName("body").innerHTML = data["message"];
-        document.getElementsByTagName("body").innerHTML += `<br><a href="${data[""]}">See More</a>`
+        document.getElementsByTagName("body").innerHTML += `<br><a href="${data["link"]}">See More</a>`
     }
 
     data = data.sort((a, b) => {

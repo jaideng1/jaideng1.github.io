@@ -1,6 +1,6 @@
 # My Portfolio
 
-~~yes ik i spelt it wrong in the repo name~~
+This is my portfolio, a collection of all of my projects on GitHub on a semi-organized format, with some cool effects! (Woo)   
+   
 
-i spelt that right now
-
+Made with Google Fonts, THREE.js, and p5.js.

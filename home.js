@@ -21,16 +21,58 @@ let maxMoveRight = PAGE_WIDTH - maxMoveRightAdj;
 
 document.addEventListener("scroll", onScroll)
 
+const scrollArrowTransitionTime = 0.25;
+
+const downArrow = `<svg id="scroll-svg" style="width:64px;height:64px;margin-top:100px;transition-duration:${scrollArrowTransitionTime}s;" viewBox="0 0 24 24">
+<path fill="currentColor" d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" />
+</svg>`;
+
+const upArrow = `<svg id="scroll-svg" style="width:64px;height:64px;margin-top:100px;transition-duration:${scrollArrowTransitionTime}s;" viewBox="0 0 24 24">
+<path fill="currentColor" d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+</svg>`;
+
+
+let lastScroll = window.scrollY;
 /**
  * When a scroll happens, adjust the screen based on how far the page is scrolled.
  * @returns
  */
 function onScroll() {
     scrl = window.scrollY;
+
+    if (scrl > 9300 && scrl < 9500) {
+        document.getElementById("canvas-bg").style.opacity = (scrl - 9300) / 200;
+    } else if (scrl <= 9300) {
+        document.getElementById("canvas-bg").style.opacity = 0;
+    } else if (scrl > 9500 && scrl < 12000) {
+        document.getElementById("canvas-bg").style.opacity = 1;
+    } else if (scrl > 12000 && scrl < 12500) {
+        document.getElementById("canvas-bg").style.opacity = 1 - ((scrl - 12000) / 500);
+    }
+
+    if (scrl > 10000 && scrl < 12000) {
+        document.getElementById("circle-where").style.opacity = 1;
+    } else if (scrl > 9500 && scrl < 10000) {
+        document.getElementById("circle-where").style.opacity = (scrl - 9500) / 500;
+    } else if (scrl > 12000 && scrl < 12500) {
+        document.getElementById("circle-where").style.opacity = 1 - ((scrl - 12000) / 500);
+    } else {
+        document.getElementById("circle-where").style.opacity = 0;
+    }
+
+    if (13000 - scrl > 50) {
+        document.getElementById("socials-content").style.top = (13000 - scrl) + "px";
+    } else {
+        document.getElementById("socials-content").style.top = 50 + "px"
+    }
     
     let imgStartX = { 
         right: wholePfp.getBoundingClientRect().right,
         left: wholePfp.getBoundingClientRect().left
+    }
+
+    if (lastScroll >= 4949 && scrl < 4949 || lastScroll <= 4951 && scrl > 4951 && !usingScrollButton) {
+        initializeScroll();
     }
     
     if (scrl > 100 && scrl < 3100) {
@@ -88,7 +130,45 @@ function onScroll() {
         emptyPfp.style.opacity = 1;
         namePfp.style.opacity = 1;
     }
+
+    lastScroll = window.scrollY;
 }
+
+var usingScrollButton = false;
+function switchScroll() {
+    if (usingScrollButton) return;
+    let goingUp = scrl > 9990/2;
+    window.scrollTo({top: goingUp ? 0 : 9900, behavior: 'smooth'});
+    document.getElementById("scroll-svg").style.marginTop = "100px";
+    usingScrollButton = true;
+    setTimeout(() => {
+        usingScrollButton = false;
+    }, 600)
+
+    setTimeout(() => {
+        if (!goingUp) {
+            document.getElementById("down-button").innerHTML = upArrow;
+        } else document.getElementById("down-button").innerHTML = downArrow;
+
+        setTimeout(() => {
+            document.getElementById("scroll-svg").style.marginTop = "16px";
+        },100)
+    }, scrollArrowTransitionTime * 1000);
+}
+
+function initializeScroll() {
+    let isDown = window.scrollY > 9900/2;
+    if (isDown) {
+        document.getElementById("down-button").innerHTML = upArrow;
+    } else document.getElementById("down-button").innerHTML = downArrow;
+
+    setTimeout(() => {
+        document.getElementById("scroll-svg").style.marginTop = "16px";
+    },100)
+}
+
+
+const NoAutoScroll = true;
 
 /**
  * When the page loads, adjust the page based on the scroll.
@@ -96,10 +176,17 @@ function onScroll() {
  */
  window.addEventListener("load", () => {
     setTimeout(() => {
+        if (!NoAutoScroll) scrollTo(0, 0); //Some things break if the page doesn't start up at the top, idk why, but this is just to fix it.
+        //NVM disregard that last comment, i fixed it idk why i made the canvas absolute that was such a bad idea anyway i'll keep it here just in case.
+    }, 50)
+
+    setTimeout(() => {
         onScroll();
     }, 100)
 
     addMenuHoverEvents();
+
+    initializeScroll();
 })
 
 /**
@@ -111,6 +198,14 @@ window.onresize = () => {
     PAGE_HEIGHT = window.innerHeight;
 
     maxMoveRight = PAGE_WIDTH - maxMoveRightAdj;
+
+    try {
+        renderer.setSize( PAGE_WIDTH, PAGE_HEIGHT );
+
+        //Change aspect ratio of camera
+        camera.aspect = PAGE_WIDTH / PAGE_HEIGHT;
+        camera.updateProjectionMatrix();
+    } catch (e) {}
 
     onScroll();
 }
@@ -164,6 +259,12 @@ function pullOutMenu() {
 
 var ableToUseMenu = true;
 
+const listOfThingsThatAreMessedUpInZIndex = [
+    "after-content",
+    "break-it",
+    "after-break"
+]
+
 /**
  * Allows the menu to be clicked on, and reveal it.
  * @returns
@@ -176,6 +277,10 @@ function enableMenu() {
 
         document.getElementById("menu-content").classList.remove("hidden")
         document.getElementById("menu-content").classList.add("shown")
+
+        for (let id of listOfThingsThatAreMessedUpInZIndex) {
+            document.getElementById(id).classList.add("hidden")
+        }
     }
 }
 
@@ -190,6 +295,10 @@ function disableMenu() {
 
     document.getElementById("menu-content").classList.remove("shown")
     document.getElementById("menu-content").classList.add("hidden")
+
+    for (let id of listOfThingsThatAreMessedUpInZIndex) {
+        document.getElementById(id).classList.remove("hidden")
+    }
 }
 
 function addMenuHoverEvents() {

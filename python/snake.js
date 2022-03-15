@@ -28,7 +28,7 @@ class Snake {
 
         if (this.stopAddingNodes) this.nodes.shift();
 
-        this.pos.y -= this.speed / 2;
+        this.pos.y -= this.speed / 2.5;
         if (this.goingRight) {
             this.pos.x += this.size / 25;
         } else {
@@ -68,7 +68,7 @@ class Snake {
 
         let size = 75;
 
-        let n = Math.ceil(window.innerWidth / size) + 1;
+        let n = Math.ceil(window.innerWidth / size) + 2;
 
         for (let i = 0; i < n; i++) {
             snakes.push(new Snake(i * size, window.innerHeight + size, (i % 2 == 0) ? {
