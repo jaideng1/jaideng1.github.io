@@ -89,3 +89,5 @@ async function createSocials() {
 function isLocal() {
     return document.location.hostname == "localhost";
 }
+
+//wee woo
